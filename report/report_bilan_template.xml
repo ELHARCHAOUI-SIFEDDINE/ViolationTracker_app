@@ -1,0 +1,185 @@
+<odoo>
+	<data>
+		<template id="report_bilan_template">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+                <!-- Your custom header here -->
+                <div class="header">
+                    <img t-att-src="'/bilan_mensuel/static/src/img/logo.png'"
+                         style="width: 300px; position:relative; height: 100px; margin-left: 310px;"/>
+                    <h5 style="font-style: italic;  margin-top: 15px; color: #666564; font-size: 15px; font-weight: bold; margin-left: 170px;">
+                        DIRECTION REGIONALE DE L’AGENCE NATIONALE DES EAUX ET FORETS DE L’ORIENTAL
+                    </h5>
+                    <h3 style="font-family: Georgia, serif;  margin-top: 15px; font-size: 16px; font-weight: bold; margin-left: 290px;">
+                        ETAT MENSUEL DU CONTENTIEUX PENAL
+                    </h3>
+                    <h3 style="font-family: Georgia, serif;  margin-top: 15px; font-size: 16px; font-weight: bold; margin-left: 430px; text-decoration: underline;">
+                        Mois de 2023
+                    </h3>
+                    <table style="width: 90%; margin: 0 auto; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 16px;">
+                        <col width="40%">
+                            <colgroup span="2"></colgroup>
+                            <colgroup span="2"></colgroup>
+                            <tr>
+                                <td rowspan="2" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">Qualification de délit</td>
+                                <th colspan="2" scope="colgroup" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">Nombre de P.V</th>
+                                <th colspan="2" width="40%" scope="colgroup" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">Depuis le début de l’Année</th>
+                                <th scope="col" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">Au cours de Mois</th>
+                                <th scope="col" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">Total</th>
+                                <th scope="col" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">Observation</th>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">Délit d’adjudication</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- Pâturage</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- Coupe ou enlèvement du bois Mutilation
+                                    grave
+                                </th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- - Destruction ou déplacement de borne
+                                    et Empiétement en DF
+                                </th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- défrichement en Forêts Domaniale</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">-Labour  en  Forêts Domaniale</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- défrichement en Forêts Domaniale</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">-Extraction ou enlèvement de produits secondaire</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- -	Carbonisation </th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- Incendie </th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">-Feu à l’intérieur ou à distance Prohibé</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">Construction ou campement à distance prohibé</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">-Défrichement ou exploitation de bois particulier</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">-Infraction au disposition de l’arrêté du 4-9-1918 (Col port)</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- Chasse</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- Pêche</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- Divers</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <th scope="row" style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">- Total</th>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;">0</td>
+                                <td style="border: 1px solid #ddd; text-align: center; vertical-align: middle; color: #333;"></td>
+                            </tr>
+                        </col>
+                    </table>
+                    <h3 style="font-family: Georgia, serif;  margin-top: 15px; font-size: 16px; font-weight: bold; margin-left: 40px;">
+                        Destinataire : Monsieur le Directeur Régional des Eaux et Forêts et de  la Lutte Contre la Désertification de l’Oriental  d’Oujda
+                    </h3>
+
+                </div>
+            </t>
+			</t>
+		</template>
+		<record id="action_bilan_report_pdf" model="ir.actions.report">
+			<field name="name">Bilan</field>
+			<field name="model">bilan</field>
+			<field name="report_type">qweb-pdf</field>
+			<field name="report_name">bilan_mensuel.report_bilan_template</field>
+			<field name="report_file">bilan_mensuel.report_bilan_template</field>
+			<field name="print_report_name">'Bilan mensuel'</field>
+			<field name="binding_model_id" ref="model_bilan" />
+			<field name="binding_type">report</field>
+		</record>
+	</data>
+</odoo>

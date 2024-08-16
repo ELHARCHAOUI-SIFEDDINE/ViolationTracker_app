@@ -1,0 +1,453 @@
+<odoo>
+    <!-- Define the region (company) -->
+    <!-- Main company record for the region -->
+    <record id="company_oujda" model="res.company">
+        <field name="name">الوكالة الجهوية للمياه و الغابات للشرق</field>
+    </record>
+
+    <!-- Define the branches (child companies) -->
+    <!-- Branch records associated with the main company -->
+    <record id="branch_berkane" model="res.branch">
+        <field name="name">الوكالة الإقليمية للمياه و الغابات لبركان</field>
+        <field name="company_id" ref="company_oujda"/>
+    </record>
+
+    <record id="branch_taourirt" model="res.branch">
+        <field name="name">الوكالة الإقليمية للمياه و الغابات لتاوريرت</field>
+        <field name="company_id" ref="company_oujda"/>
+    </record>
+
+    <record id="branch_jerada" model="res.branch">
+        <field name="name">الوكالة الإقليمية للمياه و الغابات لجرادة</field>
+        <field name="company_id" ref="company_oujda"/>
+    </record>
+
+    <record id="branch_guercif" model="res.branch">
+        <field name="name">الوكالة الإقليمية للمياه و الغابات لجرسيف</field>
+        <field name="company_id" ref="company_oujda"/>
+    </record>
+
+    <record id="branch_figuig" model="res.branch">
+        <field name="name">الوكالة الإقليمية للمياه و الغابات لفجيج</field>
+        <field name="company_id" ref="company_oujda"/>
+    </record>
+
+    <record id="branch_driouch" model="res.branch">
+        <field name="name">الوكالة الإقليمية للمياه و الغابات للدريوش</field>
+        <field name="company_id" ref="company_oujda"/>
+    </record>
+
+    <record id="branch_nador" model="res.branch">
+        <field name="name">الوكالة الإقليمية للمياه و الغابات للناظور</field>
+        <field name="company_id" ref="company_oujda"/>
+    </record>
+
+    <record id="branch_oujda" model="res.branch">
+        <field name="name">الوكالة الإقليمية للمياه و الغابات لوجدة</field>
+        <field name="company_id" ref="company_oujda"/>
+    </record>
+
+    <!-- Define the areas and forest areas -->
+    <!-- Area and forest area records associated with branches -->
+
+    <!-- Oujda Area and Forest Areas -->
+    <record id="area_oujda" model="area">
+        <field name="name">وجدة أنكاد</field>
+        <field name="branch_id" ref="branch_oujda"/>
+    </record>
+
+    <record id="forest_area_oujda" model="forest.area">
+        <field name="name">منطقة الغابوية لوجدة</field>
+        <field name="area_id" ref="area_oujda"/>
+    </record>
+
+    <record id="forest_area_matrouh" model="forest.area">
+        <field name="name">منطقة الغابوية لمطروح</field>
+        <field name="area_id" ref="area_oujda"/> <!-- Adjust the ref to the correct branch if needed -->
+    </record>
+
+    <record id="forest_area_ain_elmou" model="forest.area">
+        <field name="name">منطقة الغابوية لعين ألمو</field>
+        <field name="area_id" ref="area_oujda"/> <!-- Adjust the ref to the correct branch if needed -->
+    </record>
+
+    <!-- Berkane Area and Forest Areas -->
+    <record id="area_berkane" model="area">
+        <field name="name">بركان </field>
+        <field name="branch_id" ref="branch_berkane"/>
+    </record>
+
+    <record id="forest_area_berkane_1" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لبركان</field>
+        <field name="area_id" ref="area_berkane"/>
+    </record>
+
+    <record id="forest_area_berkane_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لتافوغالت</field>
+        <field name="area_id" ref="area_berkane"/>
+    </record>
+
+    <record id="forest_area_berkane_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لتنزرت</field>
+        <field name="area_id" ref="area_berkane"/>
+    </record>
+
+    <record id="forest_area_berkane_4" model="forest.area">
+        <field name="name">المحمية ذات الأهمية البيولوجية و الايكولوجية لملوية</field>
+        <field name="area_id" ref="area_berkane"/>
+    </record>
+
+    <!-- Driouch Area and Forest Areas -->
+    <record id="area_driouch" model="area">
+        <field name="name">الدريوش  </field>
+        <field name="branch_id" ref="branch_driouch"/>
+    </record>
+
+    <record id="forest_area_driouch_1" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لعين زورة</field>
+        <field name="area_id" ref="area_driouch"/>
+    </record>
+
+    <record id="forest_area_driouch_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لبودينار</field>
+        <field name="area_id" ref="area_driouch"/>
+    </record>
+
+    <record id="forest_area_driouch_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية للدريوش</field>
+        <field name="area_id" ref="area_driouch"/>
+    </record>
+
+    <record id="forest_area_driouch_4" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لميدار</field>
+        <field name="area_id" ref="area_driouch"/>
+    </record>
+
+    <!-- Nador Area and Forest Areas -->
+    <record id="area_nador_1" model="area">
+        <field name="name">الناظور</field>
+        <field name="branch_id" ref="branch_nador"/>
+    </record>
+
+    <record id="area_nador_2" model="area">
+        <field name="name">زايو</field>
+        <field name="branch_id" ref="branch_nador"/>
+    </record>
+
+    <record id="forest_area_nador_1" model="forest.area">
+        <field name="name">الناظور دائرة تنمية المجال الغابوي </field>
+        <field name="area_id" ref="area_nador_1"/>
+    </record>
+
+    <record id="forest_area_nador_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لبني بوغافر  </field>
+        <field name="area_id" ref="area_nador_1"/>
+    </record>
+
+    <record id="forest_area_nador_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لزغنان  </field>
+        <field name="area_id" ref="area_nador_1"/>
+    </record>
+
+    <record id="forest_area_nador_3" model="forest.area">
+        <field name="name">المحمية ذات الأهمية البيولوجية و الايكولوجية لكوروكو  </field>
+        <field name="area_id" ref="area_nador_1"/>
+    </record>
+
+    <record id="forest_area_zayo_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي </field>
+        <field name="area_id" ref="area_nador_2"/>
+    </record>
+
+    <record id="forest_area_zayo_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لزايو </field>
+        <field name="area_id" ref="area_nador_2"/>
+    </record>
+
+    <record id="forest_area_zayo_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لحاسي بركان  </field>
+        <field name="area_id" ref="area_nador_2"/>
+    </record>
+
+    <record id="forest_area_zayo_4" model="forest.area">
+        <field name="name">منطقة القرب الغابوية للعروي</field>
+        <field name="area_id" ref="area_nador_2"/>
+    </record>
+
+    <record id="forest_area_zayo_5" model="forest.area">
+        <field name="name">منطقة القرب الغابوية للقرية</field>
+        <field name="area_id" ref="area_nador_2"/>
+    </record>
+
+    <!-- Jerada Area and Forest Areas -->
+    <record id="area_jerada" model="area">
+        <field name="name">جرادة </field>
+        <field name="branch_id" ref="branch_jerada"/>
+    </record>
+
+    <record id="area_mathar" model="area">
+        <field name="name">عين بني مطهر </field>
+        <field name="branch_id" ref="branch_jerada"/>
+    </record>
+
+    <record id="forest_area_jerada_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_jerada"/>
+    </record>
+
+    <record id="forest_area_jerada_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية للعوينات </field>
+        <field name="area_id" ref="area_jerada"/>
+    </record>
+
+    <record id="forest_area_jerada_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لعين كرمة</field>
+        <field name="area_id" ref="area_jerada"/>
+    </record>
+
+    <record id="forest_area_jerada_4" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لشخار</field>
+        <field name="area_id" ref="area_jerada"/>
+    </record>
+
+    <record id="forest_area_mathar_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_mathar"/>
+    </record>
+
+    <record id="forest_area_mathar_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية للمريجة</field>
+        <field name="area_id" ref="area_mathar"/>
+    </record>
+
+    <record id="forest_area_mathar_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لعين بني مطهر</field>
+        <field name="area_id" ref="area_mathar"/>
+    </record>
+
+    <!-- Figuig Area and Forest Areas -->
+    <record id="area_talsint" model="area">
+        <field name="name">تالسينت </field>
+        <field name="branch_id" ref="branch_figuig"/>
+    </record>
+
+    <record id="area_bouarfa" model="area">
+        <field name="name">بوعرفة</field>
+        <field name="branch_id" ref="branch_figuig"/>
+    </record>
+
+    <record id="forest_area_talsint_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_talsint"/>
+    </record>
+
+    <record id="forest_area_talsint_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لأنوال</field>
+        <field name="area_id" ref="area_talsint"/>
+    </record>
+
+    <record id="forest_area_talsint_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لتالسينت</field>
+        <field name="area_id" ref="area_talsint"/>
+    </record>
+
+    <record id="forest_area_bouarfa_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_bouarfa"/>
+    </record>
+
+    <record id="forest_area_bouarfa_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لبوعرفة</field>
+        <field name="area_id" ref="area_bouarfa"/>
+    </record>
+
+    <record id="forest_area_bouarfa_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لجبل كروز</field>
+        <field name="area_id" ref="area_bouarfa"/>
+    </record>
+
+    <record id="forest_area_bouarfa_4" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لتندرارة</field>
+        <field name="area_id" ref="area_bouarfa"/>
+    </record>
+
+    <!-- Guercif Area and Forest Areas -->
+    <record id="area_guercif" model="area">
+        <field name="name">جرسيف </field>
+        <field name="branch_id" ref="branch_guercif"/>
+    </record>
+
+    <record id="area_tamjilt" model="area">
+        <field name="name">تامجيلت</field>
+        <field name="branch_id" ref="branch_guercif"/>
+    </record>
+
+    <record id="area_tadert" model="area">
+        <field name="name">تادرت</field>
+        <field name="branch_id" ref="branch_guercif"/>
+    </record>
+
+    <record id="forest_area_guercif_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_guercif"/>
+    </record>
+
+    <record id="forest_area_guercif_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لجرسيف</field>
+        <field name="area_id" ref="area_guercif"/>
+    </record>
+
+    <record id="forest_area_guercif_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لارشيدة</field>
+        <field name="area_id" ref="area_guercif"/>
+    </record>
+
+    <record id="forest_area_guercif_4" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لصاكا</field>
+        <field name="area_id" ref="area_guercif"/>
+    </record>
+
+    <record id="forest_area_tamjilt_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_tamjilt"/>
+    </record>
+
+    <record id="forest_area_tamjilt_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لعين أملال</field>
+        <field name="area_id" ref="area_tamjilt"/>
+    </record>
+
+    <record id="forest_area_tamjilt_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لبني بويلول</field>
+        <field name="area_id" ref="area_tamjilt"/>
+    </record>
+
+    <record id="forest_area_tamjilt_4" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لبركين</field>
+        <field name="area_id" ref="area_tamjilt"/>
+    </record>
+
+    <record id="forest_area_tamjilt_5" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لتامجليت</field>
+        <field name="area_id" ref="area_tamjilt"/>
+    </record>
+
+    <record id="forest_area_tadert_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_tadert"/>
+    </record>
+
+    <record id="forest_area_tadert_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لراس القصر</field>
+        <field name="area_id" ref="area_tadert"/>
+    </record>
+
+    <record id="forest_area_tadert_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لتادرت</field>
+        <field name="area_id" ref="area_tadert"/>
+    </record>
+
+    <record id="forest_area_tadert_4" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لمزكيتام</field>
+        <field name="area_id" ref="area_tadert"/>
+    </record>
+
+    <!-- Taourirt Area and Forest Areas -->
+    <record id="area_taourirt" model="area">
+        <field name="name">تاوريرت </field>
+        <field name="branch_id" ref="branch_taourirt"/>
+    </record>
+
+    <record id="area_debdou" model="area">
+        <field name="name">دبدو</field>
+        <field name="branch_id" ref="branch_taourirt"/>
+    </record>
+
+    <record id="area_laayoune" model="area">
+        <field name="name">العيون</field>
+        <field name="branch_id" ref="branch_taourirt"/>
+    </record>
+
+    <record id="forest_area_taourirt_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_taourirt"/>
+    </record>
+
+    <record id="forest_area_taourirt_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لتاوريرت</field>
+        <field name="area_id" ref="area_taourirt"/>
+    </record>
+
+    <record id="forest_area_taourirt_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لعين سراق</field>
+        <field name="area_id" ref="area_taourirt"/>
+    </record>
+
+    <record id="forest_area_debdou_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_debdou"/>
+    </record>
+
+    <record id="forest_area_debdou_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لعين تفشنة</field>
+        <field name="area_id" ref="area_debdou"/>
+    </record>
+
+    <record id="forest_area_debdou_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لعوام</field>
+        <field name="area_id" ref="area_debdou"/>
+    </record>
+
+    <record id="forest_area_debdou_4" model="forest.area">
+        <field name="name">منطقة القرب الغابوية للعاطف</field>
+        <field name="area_id" ref="area_debdou"/>
+    </record>
+
+    <record id="forest_area_debdou_5" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لالة ميمونة</field>
+        <field name="area_id" ref="area_debdou"/>
+    </record>
+
+    <record id="forest_area_debdou_6" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لدبدو</field>
+        <field name="area_id" ref="area_debdou"/>
+    </record>
+
+    <record id="forest_area_laayoune_1" model="forest.area">
+        <field name="name">دائرة تنمية المجال الغابوي  </field>
+        <field name="area_id" ref="area_laayoune"/>
+    </record>
+
+    <record id="forest_area_laayoune_2" model="forest.area">
+        <field name="name">منطقة القرب الغابوية للعياط</field>
+        <field name="area_id" ref="area_laayoune"/>
+    </record>
+
+    <record id="forest_area_laayoune_3" model="forest.area">
+        <field name="name">منطقة القرب الغابوية لمشرع حمادي</field>
+        <field name="area_id" ref="area_laayoune"/>
+    </record>
+
+    <!-- Access Rights -->
+    <!-- Define access rights for the models -->
+    <record id="access_forest_area_user" model="ir.model.access">
+        <field name="name">forest.area access</field>
+        <field name="model_id" ref="model_forest_area"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="area_model_access" model="ir.model.access">
+        <field name="name">Area Access</field>
+        <field name="model_id" ref="model_area"/> <!-- Ensure 'model_area' is the correct external ID for the model -->
+        <field name="group_id" ref="base.group_user"/> <!-- or another group ID depending on your access policy -->
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+</odoo>

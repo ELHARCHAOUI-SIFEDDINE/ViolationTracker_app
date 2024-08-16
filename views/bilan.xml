@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <!-- Define the form view for the 'bilan' model -->
+        <record id="bilan_form_view" model="ir.ui.view">
+            <field name="name">bilan.form</field>
+            <field name="model">bilan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                            <!-- Group for general details -->
+                            <group>
+                                <separator string="التفاصيل"/>
+                                <field name="regione"/>
+                                <field name="branch" attrs="{'invisible': [('regione', '=', False)]}"/>
+                                <field name="area" attrs="{'invisible': [('branch', '=', False)]}"/>
+                                <field name="forest_area" attrs="{'invisible': [('branch', '=', False)]}"/>
+                                <field name="annee"/>
+                                <field name="mois"/>
+                                <field name="date_inspection"/>
+                            </group>
+                            <!-- Group for infraction details -->
+                            <group>
+                                <field name="nom_redacteur_proces_verbal" required="1"/>
+                                <field name="numero_proces_verbal" required="1"/>
+                                <field name="date_cachetage_proces_verbal"/>
+                                <field name="nom_prenom_infraction" required="1"/>
+                                <field name="infraction" required="1"/>
+                                <field name="type_infraction"/>
+                                <field name="autres" attrs="{'invisible': [('type_infraction', '!=', 'Autres')]}"/>
+                                <field name="infraction_category"/>
+                                <field name="date_entree_base_donnees"/>
+                                <field name="entree_base_donnees"/>
+                                <field name="company_id" attrs="{'invisible': True}" group="base.group_multi_company"/>
+                            </group>
+                            <!-- Group for additional dates and notes -->
+                            <group>
+                                <field name="date_notification"/>
+                                <field name="date_envoi_tribunal"/>
+                                <field name="date_jugement"/>
+                                <field name="jugement_appel"/>
+                                <field name="date_conciliation"/>
+                                <field name="montant_conciliation"/>
+                                <field name="date_execution"/>
+                                <field name="notes"/>
+                            </group>
+                            <!-- Notebook for detailed differences and sanctions -->
+                            <notebook position="inside">
+                                <page string="الفروقات (بالأيام/بالأشهر)">
+                                    <group>
+                                        <field name="dif_jours_inspection_cachetage"/>
+                                        <field name="dif_mois_inspection_cachetage"/>
+                                        <field name="dif_jours_cachetage_envoi_tribunal"/>
+                                        <field name="dif_jours_envoi_tribunal_jugement"/>
+                                    </group>
+                                </page>
+                                <page string="العقوبات المقترحة">
+                                    <group>
+                                        <field name="sanctions_propos_ids" widget="one2many_list">
+                                            <tree editable="bottom">
+                                                <field name="penalite" string="الغرامة بالدرهم"/>
+                                                <field name="remboursement" string="الارجاع بالدرهم"/>
+                                                <field name="compensation" string="التعويض بالدرهم"/>
+                                            </tree>
+                                        </field>
+                                        <field name="prison"/>
+                                    </group>
+                                </page>
+                                <page string="العقوبات المحكومة">
+                                    <group>
+                                        <field name="sanctions_prononce_ids" widget="one2many_list">
+                                            <tree editable="bottom">
+                                                <field name="penalite" string="الغرامة بالدرهم"/>
+                                                <field name="remboursement" string="الارجاع بالدرهم"/>
+                                                <field name="compensation" string="التعويض بالدرهم"/>
+                                            </tree>
+                                        </field>
+                                        <field name="prison_prononce"/>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </header>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <!-- Define the tree view for the 'bilan' model -->
+        <record id="bilan_tree_view" model="ir.ui.view">
+            <field name="name">bilan.tree</field>
+            <field name="model">bilan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="regione"/>
+                    <field name="branch" attrs="{'invisible': [('regione', '=', False)]}"/>
+                    <field name="mois"/>
+                    <field name="numero_proces_verbal"/>
+                    <field name="date_inspection"/>
+                    <field name="type_infraction"/>
+                    <field name="date_cachetage_proces_verbal"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Pivot View -->
+        <!-- Define the pivot view for the 'bilan' model -->
+        <record id="bilan_pivot_view" model="ir.ui.view">
+            <field name="name">bilan.pivot</field>
+            <field name="model">bilan</field>
+            <field name="arch" type="xml">
+                <pivot string="Bilan Mensuel">
+                    <field name="regione" type="row"/>
+                    <field name="mois" type="col"/>
+                    <field name="type_infraction" type="col"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Graph View -->
+        <!-- Define the graph view for the 'bilan' model -->
+        <record id="bilan_graph_view" model="ir.ui.view">
+            <field name="name">bilan.graph</field>
+            <field name="model">bilan</field>
+            <field name="arch" type="xml">
+                <graph string="Bilan Mensuel" type="bar">
+                    <field name="type_infraction" group="1"/>
+                </graph>
+            </field>
+        </record>
+
+        <!-- Window Action -->
+        <!-- Define the action to open the 'bilan' model views -->
+        <record id="action_bilan" model="ir.actions.act_window">
+            <field name="name">Bilan Mensuel</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bilan</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+
+        <!-- Menu Item -->
+        <!-- Define the menu item to access the 'bilan' model -->
+        <menuitem id="menu_bilan" name="حصيلة محاضر المخالفات الغابوية" parent="main_menu" sequence="1" action="action_bilan"/>
+    </data>
+</odoo>

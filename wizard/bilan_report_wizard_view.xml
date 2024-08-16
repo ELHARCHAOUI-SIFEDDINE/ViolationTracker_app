@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_bilan_report_wizard_form" model="ir.ui.view">
+			<field name="name">bilan.report.wizard.form</field>
+			<field name="model">bilan.report.wizard</field>
+			<field name="arch" type="xml">
+				<form string="حصيلة محاضر المخالفات الغابوية">
+					<group>
+						<field name="mois" />
+						<field name="type_infraction" />
+					</group>
+					<footer>
+						<button name="print_report" string="طباعة" type="object"
+							class="btn-primary" />
+						<button string="إلغاء" class="btn-secondary"
+							special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="action_report_bilan_wizard"
+			model="ir.actions.act_window">
+			<field name="name">Bilan mensuel</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">bilan.report.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_bilan_report_wizard_form" />
+			<field name="target">new</field>
+		</record>
+		<menuitem id="menu_report_bilan_wizard" name="تقرير"
+			parent="bilan_mensuel.main_menu" action="action_report_bilan_wizard"
+			sequence="2" />
+	</data>
+</odoo>

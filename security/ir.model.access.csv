@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bilan_mensuel_access_propos,access_propos,model_propos,base.group_user,1,1,1,1
+bilan_mensuel_access_prononce,access_prononce,model_prononce,base.group_user,1,1,1,1
+bilan_mensuel.access_bilan,access_bilan,model_bilan,base.group_user,1,1,1,1
+bilan_mensuel.access_area,access_area,model_area,base.group_user,1,1,1,1
+access_bilan_report_wizard,access_bilan_report_wizard,model_bilan_report_wizard,base.group_user,1,1,1,1
